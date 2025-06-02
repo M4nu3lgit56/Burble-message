@@ -67,16 +67,18 @@ body {
 
 .burble {
   background-color: purple;
-  padding: 1em;
+  padding: 1.5em 2em;
   border-radius: 1em;
   font-family: sans-serif;
   color: white;
-  animation: flotar 2s ease-in-out infinite;
-  font-size: 1em;
+  font-size: 1.5em;
   max-width: 90vw;
   text-align: center;
+  animation: flotar 2s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(128, 0, 128, 0.4);
 }
 
+/* Animación */
 @keyframes flotar {
   0%   { transform: translateY(0); opacity: 0; }
   10%  { opacity: 1; }
@@ -95,7 +97,7 @@ body {
   }
 
   .burble {
-    font-size: 0.9em;
-    padding: 0.8em;
+    font-size: 1.2em;
+    padding: 1em 1.5em;
   }
 }
