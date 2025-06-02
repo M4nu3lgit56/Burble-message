@@ -72,7 +72,8 @@ body {
  animation: flotar 2s ease-in-out infinite;
 }
 @keyframes flotar {
-  0%   { transform: translateY(0); opacity: 1; }
+  0%   { transform: translateY(0); opacity: 0; }
+  10%  { opacity: 1;}
   50%  { transform: translateY(-30px); opacity: 0.8; }
   100% { transform: translateY(0); opacity: 0; }
 }
