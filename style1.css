@@ -6,16 +6,18 @@ body {
   height: 100vh;
   margin: 0;
   width: 100vw;
+  overflow: hidden;
 }
 
 .content {
   position: relative;
-  width: 100px;
-  height: 100px;
+  width: 20vw;
+  max-width: 150px;
+  aspect-ratio: 1 / 1;
   background-color: crimson;
   transform: rotate(-45deg);
   animation: heartbeat 1s infinite;
-  box-shadow: 0 0 30px rgba(220, 20, 60, 0.6);
+  box-shadow: 0 0 3vw rgba(220, 20, 60, 0.6);
 }
 
 /* Círculos superiores */
@@ -23,19 +25,19 @@ body {
 .content::after {
   content: "";
   position: absolute;
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 100%;
   background-color: crimson;
   border-radius: 50%;
 }
 
 .content::before {
-  top: -50px;
+  top: -50%;
   left: 0;
 }
 
 .content::after {
-  left: 50px;
+  left: 50%;
   top: 0;
 }
 
@@ -56,24 +58,44 @@ body {
   transform: translate(-50%, -50%) rotate(45deg);
   color: white;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 1.2em;
   text-align: center;
-  width: 80px;
+  width: 80%;
   pointer-events: none;
   z-index: 100;
 }
 
 .burble {
   background-color: purple;
-  padding: 10px;
-  border-radius: 10px;
+  padding: 1em;
+  border-radius: 1em;
   font-family: sans-serif;
   color: white;
- animation: flotar 2s ease-in-out infinite;
+  animation: flotar 2s ease-in-out infinite;
+  font-size: 1em;
+  max-width: 90vw;
+  text-align: center;
 }
+
 @keyframes flotar {
   0%   { transform: translateY(0); opacity: 0; }
-  10%  { opacity: 1;}
+  10%  { opacity: 1; }
   50%  { transform: translateY(-30px); opacity: 0.8; }
   100% { transform: translateY(0); opacity: 0; }
+}
+
+/* MEDIA QUERY para pantallas pequeñas */
+@media (max-width: 600px) {
+  .content {
+    width: 30vw;
+  }
+
+  .text {
+    font-size: 1em;
+  }
+
+  .burble {
+    font-size: 0.9em;
+    padding: 0.8em;
+  }
 }
